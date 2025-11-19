@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/TEST_TASK_SOFTSWISS_1.0/static/css/main.dea273e4.css",
+    "main.js": "/TEST_TASK_SOFTSWISS_1.0/static/js/main.6a9d167f.js",
+    "static/media/hero.webp": "/TEST_TASK_SOFTSWISS_1.0/static/media/hero.9bbda544de2579217f68.webp",
+    "static/media/card-3.webp": "/TEST_TASK_SOFTSWISS_1.0/static/media/card-3.34869dee22ff89500a6d.webp",
+    "static/media/card-4.webp": "/TEST_TASK_SOFTSWISS_1.0/static/media/card-4.f56c40425b38d771f77f.webp",
+    "static/media/card-2.webp": "/TEST_TASK_SOFTSWISS_1.0/static/media/card-2.9183ac645c35db34ea78.webp",
+    "static/media/card-1.webp": "/TEST_TASK_SOFTSWISS_1.0/static/media/card-1.8f0378ae7db95706f01f.webp",
+    "index.html": "/TEST_TASK_SOFTSWISS_1.0/index.html",
+    "main.dea273e4.css.map": "/TEST_TASK_SOFTSWISS_1.0/static/css/main.dea273e4.css.map",
+    "main.6a9d167f.js.map": "/TEST_TASK_SOFTSWISS_1.0/static/js/main.6a9d167f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dea273e4.css",
+    "static/js/main.6a9d167f.js"
+  ]
+}
