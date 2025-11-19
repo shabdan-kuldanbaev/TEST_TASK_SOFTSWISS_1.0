@@ -3,6 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"homepage": "https://shabdan-kuldanbaev.github.io/TEST_TASK_SOFTSWISS_1.0",
+	"engines": {
+		"node": "22.21.0",
+		"npm": "10.9.4"
+	},
 	"scripts": {
 		"start": "craco start",
 		"build": "craco build",
