@@ -1,0 +1,103 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+$width: 327px;
+$height: 367px;
+$size-mobile: 300px;
+$size-desktop: 327px;
+$aspect-ratio: $width/$height;
+
+.hero {
+  position: relative;
+  background: $dark-gradient, image('hero.webp') no-repeat center;
+  background-size: cover;
+  height: 490px;
+  overflow: hidden;
+  padding: 44px 0;
+
+  &__container {
+    @include flex(row, space-between, center);
+
+    height: 100%;
+
+    @include mobile {
+      @include flex(column-reverse, flex-start, center);
+    }
+  }
+
+  &__image {
+    aspect-ratio: $aspect-ratio;
+    max-width: $width;
+
+    @include desktop {
+      width: $size-desktop;
+    }
+
+    @include tablet {
+      transform: translateX(40%);
+      width: $size-mobile;
+    }
+
+    @include mobile {
+      position: absolute;
+      top: -24%;
+      width: $size-mobile;
+    }
+  }
+
+  &__content {
+    @include flex(column, center, start);
+
+    max-width: 693px;
+    gap: 22px;
+
+    &__title {
+      @include text(72px, 800, map-get($colors, 'text-light'), left);
+
+      &__painted {
+        color: map-get($colors, 'secondary');
+      }
+
+      @include tablet {
+        @include text(48px, 800, map-get($colors, 'text-light'), left);
+      }
+
+      @include mobile {
+        @include text(36px, 800, map-get($colors, 'text-light'), center);
+      }
+    }
+
+    &__paragraph {
+      @include text(32px, 700, map-get($colors, 'text-light'), left);
+
+      &__painted {
+        color: map-get($colors, 'primary');
+      }
+
+      @include tablet {
+        @include text(22px, 800, map-get($colors, 'text-light'), left);
+      }
+
+      @include mobile {
+        @include text(16px, 800, map-get($colors, 'text-light'), center);
+      }
+    }
+
+    @include tablet {
+      max-width: 411px;
+    }
+
+    @include mobile {
+      align-items: center;
+      gap: 22px;
+    }
+  }
+
+  @include tablet {
+    height: 420px;
+  }
+
+  @include mobile {
+    height: 452px;
+  }
+}

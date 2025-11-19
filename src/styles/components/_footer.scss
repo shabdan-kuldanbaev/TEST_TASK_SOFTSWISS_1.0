@@ -1,0 +1,21 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.footer {
+  padding: 0 0 20px;
+  background-color: map-get($colors, 'black');
+
+  &__container {
+    @include flex(column, center, center);
+  }
+
+  &__icon {
+    width: 52px;
+    height: 78px;
+    transform: rotate(64deg);
+  }
+
+  &__paragraph {
+    @include text(18px, 800, map-get($colors, 'primary'));
+  }
+}

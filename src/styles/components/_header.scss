@@ -1,0 +1,71 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.header {
+  @include flex(row, space-between, center);
+
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: map-get($colors, 'black');
+  z-index: $z-index-header;
+  height: $header-height;
+
+  &__container {
+    @include flex(row, space-between, center);
+  }
+
+  &__logo {
+    @include flex(row, initial, center);
+  }
+
+  &__dropdown {
+    @include flex(row, space-between, flex-start);
+
+    padding: calc($header-height + 32px) 32px 0;
+  }
+
+  &__nav {
+    &__desktop {
+      @include flex(row, initial, center);
+
+      gap: 40px;
+
+      @include mobile{
+        display: none;
+      }
+    }
+
+    &__mobile {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &-list {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    &-link {
+      @include text(18px, 700, map-get($colors, 'text-light'));
+      text-decoration: none;
+      transition: all $transition-duration $transition-timing-function;
+
+      &:hover {
+        background: -webkit-linear-gradient(98.25deg, map-get($colors, 'primary') 18.56%, map-get($colors, 'secondary') 76.02%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.offers {
+  padding: 58px 0 30px;
+
+  &__title {
+    @include text(32px, 800, map-get($colors, 'text-light'));
+
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    list-style: none;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    border-radius: 16px;
+    overflow: hidden;
+
+    &-content {
+      @include flex(column, flex-end, flex-start);
+
+      height: 350px;
+      padding: 35px;
+      gap: 22px;
+    }
+
+    h3 {
+      @include text(46px, 800, map-get($colors, 'text-light'));
+
+      max-width: 70%;
+
+      @include tablet {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      @include text(24px, 800, map-get($colors, 'text-light'));
+
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+
+    &--1 {
+      background: $dark-gradient, image('card-1.webp') no-repeat center;
+      background-size: cover;
+    };
+
+    &--2 {
+      background: $dark-gradient, image('card-2.webp') no-repeat center;
+      background-size: cover;
+    };
+
+    &--3 {
+      background: $dark-gradient, image('card-3.webp') no-repeat center;
+      background-size: cover;
+    };
+
+    &--4 {
+      background: $dark-gradient, image('card-4.webp') no-repeat center;
+      background-size: cover;
+    };
+
+
+    @include desktop {
+      &--1, &--4 {
+        grid-column: 1 / -1;
+
+        h3 {
+          @include text(74px, 800, map-get($colors, 'text-light'));
+        }
+
+        p {
+          @include text(26px, 800, map-get($colors, 'text-light'));
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 50px 0 20px;
+  }
+}

@@ -1,0 +1,20 @@
+@use 'variables' as *;
+@use 'reset';
+@forward 'variables';
+@forward 'mixins';
+@use 'components/buttons';
+@use 'components/layout';
+@use 'components/header';
+@use 'components/footer';
+@use 'components/burger';
+@use 'components/dropdown';
+@use 'components/basket-button';
+@use 'components/hero-section';
+@use 'components/offers-section';
+@use 'components/inspiration-section';
+
+body {
+  background: linear-gradient(225deg, #0D1E48 0%, #304571 100%);
+  color: #fff;
+  font-family: $font-family-main;
+}

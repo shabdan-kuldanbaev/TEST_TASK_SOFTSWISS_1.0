@@ -1,0 +1,28 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: $container-padding-l;
+
+  @include tablet {
+    padding: $container-padding-m;
+  }
+
+  @include mobile {
+    padding: $container-padding-s;
+  }
+}
+

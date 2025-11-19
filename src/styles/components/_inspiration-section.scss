@@ -1,0 +1,57 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.inspiration {
+  padding: 32px 0 60px;
+
+  &__container {
+    @include flex(column);
+
+    gap: 17px;
+
+    @include tablet {
+      gap: 13px;
+    }
+
+    @include mobile {
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    @include text(32px, 800, map-get($colors, 'text-light'));
+
+    margin-bottom: 40px;
+
+    @include tablet {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__paragraph {
+    @include text(20px, 700, map-get($colors, 'text-light'));
+
+    margin-bottom: 40px;
+    opacity: 60%;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  @include tablet {
+    padding: 25px 0 50px;
+  }
+
+  @include mobile {
+    padding: 25px 0 50px;
+  }
+}

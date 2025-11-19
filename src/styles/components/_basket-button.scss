@@ -1,0 +1,10 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.basket-button {
+  @include flex(row, initial, center);
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

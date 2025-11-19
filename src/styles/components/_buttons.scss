@@ -1,0 +1,68 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+@mixin button-variant($type) {
+  @if $type == filled {
+    background-color: map-get($colors, 'primary');
+    color: map-get($colors, 'text-dark');
+    border-radius: 100px;
+    border: none;
+
+    &:hover {
+      background-color: rgba(map-get($colors, 'primary'), 60%);
+    }
+  } @else if $type == outlined {
+    background-color: transparent;
+    border: 2px solid map-get($colors, 'primary');
+    border-radius: 100px;
+    color: map-get($colors, 'primary');
+
+    &:hover {
+      border-color: rgba(map-get($colors, 'primary'), 60%);
+      color: rgba(map-get($colors, 'primary'), 60%);
+    }
+  } @else if $type == ghost {
+    background-color: transparent;
+    border: none;
+    color: map-get($colors, 'primary');
+
+    &:hover {
+      color: rgba(map-get($colors, 'primary'), 60%);
+    }
+  }
+}
+
+.btn {
+  @include text(22px, 700, map-get($colors, 'text-dark'));
+  @include flex(row, center, center);
+
+  padding: 14px 36px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &--filled {
+    @include button-variant(filled);
+
+    @include mobile {
+      padding: 7px 36px;
+    }
+  }
+
+  &--outlined {
+    @include button-variant(outlined);
+
+    @include mobile {
+      padding: 7px 36px;
+    }
+  }
+
+  &--ghost {
+    @include button-variant(ghost);
+
+    padding: 0;
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
